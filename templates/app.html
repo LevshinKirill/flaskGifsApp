@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">GIFS SEARCH</h1>
+            <form method="post" action="/">
+                <div class="form-group">
+                    <input type="text" placeholder="Enter what are you want!" class="form-control" id="searchText" name="searchText"/>
+                </div>
+            </form>
+            <div class="card-columns">
+                {% for g in gifs %}
+                    <div class="card" style="">
+                       <img src="{{g['images']['fixed_height']['url']}}" class="card-img-top">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
